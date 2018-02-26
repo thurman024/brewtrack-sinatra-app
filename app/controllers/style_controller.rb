@@ -1,0 +1,5 @@
+class StyleController < ApplicationController
+
+
+
+end
