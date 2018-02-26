@@ -1,0 +1,7 @@
+<h1>Beer Index</h1>
+
+<%@beers.each do |beer|%>
+  <h3><%=beer.name%></h3>
+  <p><%=beer.style%> [link] by <%=beer.brewery%> LINK</p>
+  <br></br>
+<%end%>
