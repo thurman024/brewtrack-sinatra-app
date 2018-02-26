@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     if !params[:user][:username].empty? && !params[:user][:password].empty?
       user = User.create(params[:user])
       session[:user_id] = user.id
-      redirect #homepage?
+      redirect '/beers'
     else
       #error message
       redirect '/signup'
@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
 
   get '/login' do
     if logged_in?
-      redirect #homepage?
+      redirect '/beers'
     else
       erb :'users/login'
     end
@@ -44,7 +44,7 @@ class ApplicationController < Sinatra::Base
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect #homepage
+      redirect '/beers'
     else
       #error message
       redirect '/login'
