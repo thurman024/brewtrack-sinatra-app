@@ -7,7 +7,6 @@ class BeerController < ApplicationController
 
   get 'beers/new' do
     if logged_in?
-      @user = current_user
       erb :'beers/create'
     else
       #error message
