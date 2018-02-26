@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "secret"
+    set :session_secret, "password_security"
   end
 
   get '/' do
@@ -18,6 +18,17 @@ class ApplicationController < Sinatra::Base
       redirect #homepage?
     else
       erb :'users/create'
+    end
+  end
+
+  post '/signup' do
+    if !params[:user][:username].empty? && !params[:user][:password].empty?
+      user = User.create(params[:user])
+      session[:user_id] = user.id
+      redirect #homepage?
+    else
+      #error message
+      redirect '/signup'
     end
   end
 
