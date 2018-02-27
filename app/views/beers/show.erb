@@ -5,6 +5,9 @@
 <p><%=@beer.style.name%></p>
 <h4>Brewery</h4>
 <p><%=@beer.brewery.name%></p>
+<p><%=@beer.brewery.location%></p>
+<br>
+<p>Added by <%=@user.username%></p>
 
 <% if @beer.user_id = @user.id %>
 <a href="/beers/<%=@beer.id%>/edit">Edit Beer</a>

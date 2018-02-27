@@ -1,0 +1,21 @@
+<h1>Edit this Brew</h1>
+<form action="/beers" method="post">
+  <label>Name</label>
+  <input type="text" name="beer[name]" value="<%=@beer.name%>">
+  <br></br>
+  <label>Select Style</label><br>
+  <%Style.all.each do |style|%>
+    <input type="radio" name="beer[style_id]" value="<%=style.id%>" <%='checked' if @beer.style_id==style.id%> ><%=style.name%></input><br>
+  <%end%>
+  <label>Or, enter the Style here</label>
+  <input type="text" name="new_style">
+  <br><br>
+  <label>Select Brewery</label><br>
+  <%Brewery.all.each do |brewery|%>
+    <input type="radio" name="beer[brewery_id]" value="<%=brewery.id%>" <%='checked' if @beer.brewery_id==brewery.id%> ><%=brewery.name%></input><br>
+  <%end%>
+  <label>Or, enter the Brewery here</label><br>
+  <label>Brewery name: </label> <input type="text" name="new_brewery"><br>
+  <label>Location (State):</label> <input type="text" name="location"><br>
+  <input type="submit" value="Update">
+</form>
