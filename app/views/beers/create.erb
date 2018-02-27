@@ -3,17 +3,19 @@
   <label>Name</label>
   <input type="text" name="beer[name]">
   <br></br>
-  <label>Style</label><br>
+  <label>Select Style</label><br>
   <%Style.all.each do |style|%>
     <input type="radio" name="beer[style_id]" value="<%=style.id%>"><%=style.name%></input><br>
   <%end%>
-  <label>Or, enter the style here</label>
+  <label>Or, enter the Style here</label>
   <input type="text" name="new_style">
   <br><br>
-  <label>Brewery</label><br>
+  <label>Select Brewery</label><br>
   <%Brewery.all.each do |brewery|%>
     <input type="radio" name="beer[brewery_id]" value="<%=brewery.id%>"><%=brewery.name%></input><br>
   <%end%>
-  <label>Or, enter the Brewery here</label>
-  <input type="text" name="new_brewery">
+  <label>Or, enter the Brewery here</label><br>
+  <label>Brewery name: </label> <input type="text" name="new_brewery">
+  <label>Location (state):</label> <input type="text" name="location">
+  <input type="submit" value="Create">
 </form>
