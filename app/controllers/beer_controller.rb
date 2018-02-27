@@ -5,7 +5,7 @@ class BeerController < ApplicationController
     erb :'beers/index'
   end
 
-  get 'beers/new' do
+  get '/beers/new' do
     if logged_in?
       erb :'beers/create'
     else
@@ -13,4 +13,6 @@ class BeerController < ApplicationController
       redirect '/login'
     end
   end
+
+  post '/beers'
 end

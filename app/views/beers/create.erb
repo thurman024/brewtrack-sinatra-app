@@ -2,15 +2,15 @@
 <form action="/beers" method="post">
   <label>Name</label>
   <input type="text" name="beer[name]">
-
-  <label>Style</label>
+  <br></br>
+  <label>Style</label><br>
   <%Style.all.each do |style|%>
     <input type="radio" name="beer[style_id]" value="<%=style.id%>"><%=style.name%></input><br>
   <%end%>
   <label>Or, enter the style here</label>
   <input type="text" name="new_style">
-
-  <label>Brewery</label>
+  <br><br>
+  <label>Brewery</label><br>
   <%Brewery.all.each do |brewery|%>
     <input type="radio" name="beer[brewery_id]" value="<%=brewery.id%>"><%=brewery.name%></input><br>
   <%end%>

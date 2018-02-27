@@ -2,6 +2,6 @@
 
 <%@beers.each do |beer|%>
   <h3><%=beer.name%></h3>
-  <p><a href="/styles/<%=beer.style.slug%>"><%=beer.style%></a>  by <a href="/breweries/<%=beer.brewery.slug%>"><%=beer.brewery%></a></p>
+  <p><a href="/styles/<%=beer.style.slug%>"><%=beer.style.name%></a>  by <a href="/breweries/<%=beer.brewery.slug%>"><%=beer.brewery.name%></a></p>
   <br></br>
 <%end%>
