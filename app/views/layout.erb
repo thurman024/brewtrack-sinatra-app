@@ -5,11 +5,20 @@
     <title>BrewTrack</title>
   </head>
   <body>
-    
+    <header>
+      <nav>
+        <a href="/users/<%=current_user.id%>">My Beers</a>
+        <a href="/beers/new">Create a Beer</a>
+        <a href="/beers">All Beers</a>
+        <a href="/breweries">All Breweries</a>
+        <a href="/styles">All Styles</a>
+        <a href="/logout">Log Out</a>
+      </nav>
+    </header>
 
       <div id="flash-msg">
         <% if flash.has?(:message) %>
-          <%= flash[:message] %>
+          <p style = "color:red;"> <%= flash[:message] %></p>
         <% end %>
       </div>
 
