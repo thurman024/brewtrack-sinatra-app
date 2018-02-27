@@ -36,4 +36,17 @@ class BeerController < ApplicationController
     end
     redirect '/beers'
   end
+
+  get '/beers/:id' do
+    @beer = Beer.find(params[:id])
+    @user = current_user
+    erb :'beers/show'
+  end
+
+  post '/beers/:id/delete' do
+    if logged_in?
+      @beer = Beer.find(params[:id])
+      @beer.delete
+    end
+  end
 end
