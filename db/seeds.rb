@@ -15,3 +15,19 @@ breweries = [ {name: "Sierra Nevada", location: "California"},
 beers = [ {name: "Yuengling", style_id: 1, brewery_id: 3, user_id: 2},
   {name: "Founders Bfast Stout", style_id: 3, brewery_id: 2, user_id: 2},
   {name: "Sierra Nevada Pale Ale", style_id: 2, brewery_id: 1, user_id: 1}]
+
+users.each do |user|
+  User.create(user)
+end
+
+styles.each do |style|
+  Style.create(style)
+end
+
+breweries.each do |brewery|
+  Brewery.create(brewery)
+end
+
+beers.each do |beer|
+  Beer.create(beer)
+end
