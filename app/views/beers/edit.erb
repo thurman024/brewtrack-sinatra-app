@@ -1,5 +1,5 @@
 <h1>Edit this Brew</h1>
-<form action="/beers" method="post">
+<form action="/beers/<%=@beer.id%>" method="post">
   <label>Name</label>
   <input type="text" name="beer[name]" value="<%=@beer.name%>">
   <br></br>
