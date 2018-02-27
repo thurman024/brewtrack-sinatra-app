@@ -1,0 +1,7 @@
+<h1>Style Index</h1>
+
+<%@styles.each do |style|%>
+<ul>
+  <li><a href="/styles/<%=style.id%>"><%=style.name%></a> - <%=style.beers.count%> beers listed </li>
+</ul>
+<%end%>
