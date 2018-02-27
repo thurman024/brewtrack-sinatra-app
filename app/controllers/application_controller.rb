@@ -10,14 +10,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    erb :index, layout: false
   end
 
   get '/signup' do
     if logged_in?
       redirect '/beers'
     else
-      erb :'users/create'
+      erb :'users/create', layout: false
     end
   end
 
@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect '/beers'
     else
-      erb :'users/login'
+      erb :'users/login', layout: false
     end
   end
 
