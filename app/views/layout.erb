@@ -2,17 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style media="screen">
+      .links {border-style: ridge;
+        border-color : black;
+        padding: 10px 20px;}
+    </style>
     <title>BrewTrack</title>
   </head>
   <body>
     <header>
-      <nav style = "border : black 1px">
-        <a href="/users/<%=current_user.id%>">My Beers</a>
-        <a href="/beers/new">Create a Beer</a>
-        <a href="/beers">All Beers</a>
-        <a href="/breweries">All Breweries</a>
-        <a href="/styles">All Styles</a>
-        <a href="/logout">Log Out</a>
+      <nav >
+        <a class="links" href="/users/<%=current_user.id%>">My Beers</a>
+        <a class="links" href="/beers/new">Create a Beer</a>
+        <a class="links" href="/beers">All Beers</a>
+        <a class="links" href="/breweries">All Breweries</a>
+        <a class="links" href="/styles">All Styles</a>
+        <a class="links" href="/logout">Log Out</a>
       </nav>
     </header>
 

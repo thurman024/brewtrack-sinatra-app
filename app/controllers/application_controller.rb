@@ -22,7 +22,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    if !params[:user][:username].empty? && !params[:user][:password].empty?
+    if User.find_by(username: params[:user][:username])
+      flash[:message] = "That Username already exists"
+      redirect '/signup'
+    elsif !params[:user][:username].empty? && !params[:user][:password].empty?
       user = User.create(params[:user])
       session[:user_id] = user.id
       redirect '/beers'
