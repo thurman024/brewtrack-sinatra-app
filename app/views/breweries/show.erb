@@ -1,0 +1,10 @@
+<h1>Brewery Info</h1>
+
+<h2><%=@brewery.name%></h2>
+<h3><%=@brewery.location%></h3>
+
+<%@brewery.beers.each do |beer|%>
+<ul>
+  <li><a href="/beers/<%=beer.id%>"> <%=beer.name%> </a> - <a href="styles/<%=beer.style.id%>"> <%=beer.style.name%> </a></li>
+</ul>
+<%end%>

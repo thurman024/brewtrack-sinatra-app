@@ -4,7 +4,7 @@
 <h4>Style</h4>
 <p><%=@beer.style.name%></p>
 <h4>Brewery</h4>
-<p><%=@beer.brewery.name%></p>
+<p><a href="/breweries/<%=@beer.brewery.id%>"> <%=@beer.brewery.name%></a></p>
 <p><%=@beer.brewery.location%></p>
 <br>
 <p>Added by <%=@beer.user.username%></p>

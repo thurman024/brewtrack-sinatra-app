@@ -63,7 +63,7 @@ class BeerController < ApplicationController
       brewery = Brewery.create(name: params[:new_brewery], location: params[:location])
       params[:beer][:brewery_id] = brewery.id
     end
-    @beer.update(params[:beer])
+    @beer.update(params["beer"])
     redirect "/beers/#{@beer.id}"
   end
 

@@ -1,0 +1,7 @@
+<h1>Brewery Index</h1>
+
+<%@breweries.each do |brewery|%>
+<ul>
+  <li><a href="/breweries/<%=brewery.id%>"><%=brewery.name%></a> - <%=brewery.beers.count%> beers listed </li>
+</ul>
+<%end%>
