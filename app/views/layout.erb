@@ -5,6 +5,14 @@
     <title>BrewTrack</title>
   </head>
   <body>
+    
+
+      <div id="flash-msg">
+        <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+        <% end %>
+      </div>
+
     <%=yield%>
   </body>
 </html>

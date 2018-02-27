@@ -1,3 +1,5 @@
+# require 'rack-flash'
+
 class BeerController < ApplicationController
 
   get '/beers' do

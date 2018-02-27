@@ -1,8 +1,8 @@
 require './config/environment'
-
+require 'rack-flash'
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
-
+  use Rack::Flash
   configure do
     set :views, 'app/views'
     enable :sessions
@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = user.id
       redirect '/beers'
     else
-      #error message
+      flash[:message] = "Username and password must be filled out"
       redirect '/signup'
     end
   end
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = user.id
       redirect '/beers'
     else
-      #error message
+      flash[:message] = "Invalid Username/Password"
       redirect '/login'
     end
   end
