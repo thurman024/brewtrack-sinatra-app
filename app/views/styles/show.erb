@@ -4,6 +4,6 @@
 
 <%@style.beers.each do |beer|%>
 <ul>
-  <li><a href="/beers/<%=beer.id%>"> <%=beer.name%> </a> - <a href="breweries/<%=beer.brewery.id%>"> <%=beer.brewery.name%> </a></li>
+  <li><a href="/beers/<%=beer.id%>"> <%=beer.name%> </a> - <a href="/breweries/<%=beer.brewery.id%>"> <%=beer.brewery.name%> </a></li>
 </ul>
 <%end%>

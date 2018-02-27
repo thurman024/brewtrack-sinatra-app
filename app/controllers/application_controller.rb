@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get '/signup' do
     if logged_in?
-      redirect #homepage?
+      redirect '/beers'
     else
       erb :'users/create'
     end
