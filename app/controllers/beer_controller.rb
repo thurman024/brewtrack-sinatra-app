@@ -34,5 +34,6 @@ class BeerController < ApplicationController
       params[:beer][:user_id] = current_user.id
       Beer.create(params[:beer])
     end
+    redirect '/beers'
   end
 end
