@@ -17,7 +17,6 @@ class BeerController < ApplicationController
   end
 
   post '/beers' do
-    binding.pry
     if params[:beer][:name].empty?
       flash[:message] = "Name field can not be empty"
       redirect '/beers/new'
