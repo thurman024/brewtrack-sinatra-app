@@ -59,6 +59,10 @@ class BeerController < ApplicationController
 
   post '/beers/:id' do
     @beer = Beer.find(params[:id])
+    if @beer.user_id != current_user.id
+      flash[:message] = "You are only allowed to edit a beer created by you"
+      redirect to "/beers/#{@beer.id}"
+    end
     if !params[:new_style].empty?
       style = Style.create(name: params[:new_style])
       params[:beer][:style_id] = style.id
